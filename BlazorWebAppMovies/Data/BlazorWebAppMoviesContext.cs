@@ -7,13 +7,13 @@ using BlazorWebAppMovies.Models;
 
 namespace BlazorWebAppMovies.Data
 {
-    public class BlazorWebAppMoviesContext : DbContext
+  public class BlazorWebAppMoviesContext : DbContext
+  {
+    public BlazorWebAppMoviesContext(DbContextOptions<BlazorWebAppMoviesContext> options)
+        : base(options)
     {
-        public BlazorWebAppMoviesContext (DbContextOptions<BlazorWebAppMoviesContext> options)
-            : base(options)
-        {
-        }
-
-        public DbSet<BlazorWebAppMovies.Models.Movie> Movie { get; set; } = default!;
     }
+
+    public DbSet<BlazorWebAppMovies.Models.Movie> Movie { get; set; } = default!;
+  }
 }
